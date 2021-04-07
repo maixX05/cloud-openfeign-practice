@@ -1,0 +1,10 @@
+server:
+  port: 8011
+spring:
+  application:
+    name: openfeign-okhttp
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true

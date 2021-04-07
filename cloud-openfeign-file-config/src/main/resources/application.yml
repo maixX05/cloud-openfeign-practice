@@ -1,0 +1,57 @@
+server:
+  port: 8011
+spring:
+  application:
+    name: openfeign-gzip
+logging:
+  level:
+    com.msr.better.feign.service.HelloFeignService: debug
+feign:
+  # 压缩配置
+  compression:
+    request:
+      enabled: true
+      # 配置压缩支持的MIME TYPE
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048  # 配置压缩数据大小的下限
+    response:
+      enabled: true # 配置响应GZIP压缩
+  client:
+    config:
+      # 需要配置的FeignName
+      github-client:
+        # 连接超时时间
+        connectTimout: 5000
+        # 读超时时间
+        readTimeut: 5000
+        # Feign的日志级别
+        loggerLevel: full
+        # Feign的错误解码器
+        errorDecode: com.example.SimpleErrorDecoder
+        # 设置重试
+        retryer: com.example.SimpleRetryer
+        # 拦截前
+        requestInterceptors:
+          - com.example.FirstInterceptor
+          - com.example.SecondInterceptor
+        decode404: false
+        # Feign的编码器
+        encoder: com.example.SimpleEncoder
+        # Feign的解码器
+        decoder: com.example.SimpleDecoder
+        # Feign的contract配置
+        contract: com.example.SimpleContract
+  hystrix:
+    enabled: true
+      command:
+        default:
+          circuitBreaker:
+            sleepWindowinMilliseconds: 1 00000
+            forceClosed: true
+          execution:
+            isolation:
+              thread:
+                timeoutinMilliseconds: 600000
+ribbon:
+  ConnectTimeout: 2000
+  ReadTimeout: 5000

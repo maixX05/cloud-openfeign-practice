@@ -1,0 +1,8 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: openfeign-httpclient
+feign:
+  httpclient:
+    enabled: true
