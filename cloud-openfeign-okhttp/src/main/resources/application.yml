@@ -8,3 +8,7 @@ feign:
     enabled: false
   okhttp:
     enabled: true
+# 日志
+logging:
+  level:
+    com.msr.better.feign.service.HelloFeignService: debug

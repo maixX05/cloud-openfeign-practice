@@ -6,4 +6,4 @@ spring:
 # 日志
 logging:
   level:
-    cn.springcloud.book.feign.service.HelloFeignService: debug
+    com.msr.better.feign.service.HelloFeignService: debug

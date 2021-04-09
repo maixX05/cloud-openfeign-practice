@@ -13,6 +13,9 @@
         <module>cloud-openfeign-file-config</module>
         <module>cloud-openfeign-httpclient</module>
         <module>cloud-openfeign-okhttp</module>
+        <module>cloud-openfeign-eureka-server</module>
+        <module>cloud-openfeign-consumer</module>
+        <module>cloud-openfeign-provider</module>
     </modules>
 
     <packaging>pom</packaging>
