@@ -194,7 +194,7 @@ public class OpenFeignHelloApplication {
 
 运行启动类之后，在浏览器或者PostMan之类的工具访问http://localhost:8010/search/github?searchStr=spring-cloud
 
-![](./openfeign-01.png)
+![](https://cdn.jsdelivr.net/gh/MaiSR9527/blog-pic/springcloud/openfeign-01.png)
 
 # OpenFeign工作原理
 
@@ -463,7 +463,7 @@ feign:
 
 关于Http Client的一些配置也是可以在配置文件中配置的
 
-![](./openfeign-02.png)
+![](https://cdn.jsdelivr.net/gh/MaiSR9527/blog-pic/springcloud/openfeign-02.png)
 
 在`org.springframework.cloud.openfeign.clientconfig.HttpClientFeignConfiguration`中是关于HttpClient的配置：
 
@@ -1257,7 +1257,7 @@ controller的修改，对于要在前端页面显示图片，一般用的最多�
 
 浏览器访问:http://localhost:8011/file/qrcode，结果
 
-![](./openfeign-03.png)
+![](https://cdn.jsdelivr.net/gh/MaiSR9527/blog-pic/springcloud/openfeign-03.png)
 
 ## 调用传递token
 
@@ -1325,7 +1325,7 @@ public class FeignTokenInterceptor implements RequestInterceptor {
 
 最后启动服务就可以开始测试了，测试结果：
 
-![](./openfeign-04.png)
+![](https://cdn.jsdelivr.net/gh/MaiSR9527/blog-pic/springcloud/openfeign-04.png)
 
 # 总结
 
