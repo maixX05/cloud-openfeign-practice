@@ -1,4 +1,4 @@
-文章首发[Spring Cloud OpenFeign入门和实战](https://www.maishuren.top/archives/springcloudopenfeign%E5%85%A5%E9%97%A8%E5%92%8C%E5%AE%9E%E6%88%98)
+文章首发：[Spring Cloud OpenFeign入门和实战](https://www.maishuren.top/archives/springcloudopenfeign%E5%85%A5%E9%97%A8%E5%92%8C%E5%AE%9E%E6%88%98)
 
 # OpenFeign是什么
 
