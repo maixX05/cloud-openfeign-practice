@@ -16,6 +16,8 @@
         <module>cloud-openfeign-eureka-server</module>
         <module>cloud-openfeign-consumer</module>
         <module>cloud-openfeign-provider</module>
+        <module>cloud-openfeign-fileupload-server</module>
+        <module>cloud-openfeign-fileupload-client</module>
     </modules>
 
     <packaging>pom</packaging>

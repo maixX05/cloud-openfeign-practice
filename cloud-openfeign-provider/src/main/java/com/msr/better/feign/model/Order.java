@@ -8,7 +8,7 @@ package com.msr.better.feign.model;
 public class Order {
     private Long id;
     private String name;
-    private int age;
+    private int sums;
 
     public Long getId() {
         return id;
@@ -26,11 +26,11 @@ public class Order {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public int getSums() {
+        return sums;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setSums(int sums) {
+        this.sums = sums;
     }
 }

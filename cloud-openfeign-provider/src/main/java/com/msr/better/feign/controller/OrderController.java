@@ -11,18 +11,31 @@ import javax.servlet.http.HttpServletRequest;
  * @since 2021-07-03
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/order")
 public class OrderController {
 
+    /**
+     * Get方法传递实体类
+     *
+     * @param order
+     * @return
+     */
     @GetMapping(value = "/add")
-    public String addUser(Order order, HttpServletRequest request) {
-        String token = request.getHeader("oauthToken");
+    public String addOrder(Order order) {
+
         return "hello," + order.getName();
     }
 
+    /**
+     * POST方法传递实体类
+     *
+     * @param order
+     * @return
+     */
     @PostMapping(value = "/update")
-    public String updateUser(@RequestBody Order order) {
-        return "hello," + order.getName();
+    public String updateOrder(@RequestBody Order order, HttpServletRequest request) {
+        String token = request.getHeader("token");
+        return "hello," + order.getName() + " " + "haha!I get a token: " + token;
     }
 
 }
