@@ -1,5 +1,7 @@
 文章首发：[Spring Cloud OpenFeign入门和实战](https://www.maishuren.top/archives/springcloudopenfeign%E5%85%A5%E9%97%A8%E5%92%8C%E5%AE%9E%E6%88%98)
 
+
+
 # OpenFeign是什么
 
 Feign是一个声明式的Web Service客户端，是一种声明式、模板化的HTTP客户端。而OpenFeign是Spring Cloud 在Feign的基础上支持了Spring MVC的注解，如@RequesMapping等等。
@@ -398,21 +400,24 @@ ribbon:
   ReadTimeout: 5000
 ```
 
-HystrixRuntimeException: XXX  timed -out  and  no  fallback  available .这就是Hystrix的超时报错
+ HystrixRuntimeException: XXX  timed -out  and  no  fallback  available .这就是Hystrix的超时报错
 
 ```yaml
 feign:
   hystrix:
     enabled: true
-      command:
-        default:
-          circuitBreaker:
-            sleepWindowinMilliseconds: 100000
-            forceClosed: true
-          execution:
-            isolation:
-              thread:
-                timeoutinMilliseconds: 600000
+# 设置hystrix超时时间
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      circuitBreaker:
+        sleepWindowinMilliseconds: 10000
+        forceClosed: true
+      execution:
+        isolation:
+          thread:
+            timeoutinMilliseconds: 10000
 ```
 
 # OpenFeign实战
@@ -1154,7 +1159,7 @@ public interface FileUploadApiService {
              thread:
                timeoutInMillseconds: 5000 # 5秒
    ```
-
+   
 2. 禁用Hystrix的超时时间
 
    ```yaml
