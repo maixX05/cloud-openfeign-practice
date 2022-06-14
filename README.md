@@ -1,4 +1,4 @@
-文章首发：[Spring Cloud OpenFeign入门和实战](https://www.maishuren.top/archives/spring-cloud-openfeign入门和实战)
+文章首发：[Spring Cloud OpenFeign入门和实战](https://www.maishuren.top/archives/springcloudopenfeign-ru-men-he-shi-zhan)
 
 
 
