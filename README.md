@@ -1017,9 +1017,9 @@ eureka:
 ```java
 @SpringBootApplication
 @EnableDiscoveryClient
-public class SCFeignFileServerApplication {
+public class UploadServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SCFeignFileServerApplication.class, args);
+        SpringApplication.run(UploadServerApplication.class, args);
     }
 }
 ```
@@ -1031,8 +1031,9 @@ public class SCFeignFileServerApplication {
 public class FileController {
 
     @PostMapping(value = "/uploadFile/server", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public String fileUploadServer(MultipartFile file ) throws Exception{
-        return file.getOriginalFilename();
+    public String fileUploadServer(MultipartFile file) {
+        // save file and return file address
+        return "http://localhost/" + file.getOriginalFilename();
     }
 }
 ```
@@ -1085,6 +1086,20 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+```
+
+启动类：
+
+```java
+@SpringBootApplication
+@EnableDiscoveryClient
+@EnableFeignClients
+public class UploadClientApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(UploadClientApplication.class, args);
+    }
+}
 ```
 
 配置类
@@ -1140,7 +1155,11 @@ public interface FileUploadApiService {
 
 ### 测试
 
-运行Eureka Server、cloud-openfeign-fileupload-client模块和cloud-openfeign-fileupload-server模块，使用PostMan进行测试。最后成功返回文件的名字，文件成功的上传到server上了。
+1. 先启动cloud-openfeign-eureka-server
+2. 后启动cloud-openfeign-fileupload-server和cloud-openfeign-fileupload-client
+3. 使用PostMan进行测试。最后成功返回文件的名字，文件成功的上传到server上了。如下图：
+
+![](https://image.maishuren.top/springcloud/openfeign-upload-file.png-msr)
 
 ## 解决首次请求失败问题
 
